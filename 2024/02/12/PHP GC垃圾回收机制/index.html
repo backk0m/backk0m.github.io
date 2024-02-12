@@ -18,15 +18,15 @@
   
     <meta name="description" content="前言在php中，当对象被销毁时会自动调用__destruct()方法，如果程序报错或者抛出异常，则就不会触发该魔术方法。但是在PHP中存在垃圾回收机制可以提前触发__destruct()函数 GC概念在PHP中，使用引用计数和回收周期来自动管理内存对象的，当一个变量被设置为NULL，或者没有任何指针指向时，它就会被变成垃圾，被GC机制自动回收掉，那么这里的话我们就可以理解为，当一个对象没有被引用时">
 <meta property="og:type" content="article">
-<meta property="og:title" content="GC垃圾回收机制">
-<meta property="og:url" content="http://backk0m.github.io/2024/02/12/GC%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6%E6%9C%BA%E5%88%B6/index.html">
+<meta property="og:title" content="PHP GC垃圾回收机制">
+<meta property="og:url" content="http://backk0m.github.io/2024/02/12/PHP%20GC%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6%E6%9C%BA%E5%88%B6/index.html">
 <meta property="og:site_name" content="Backk0m&#39;s Blog">
 <meta property="og:description" content="前言在php中，当对象被销毁时会自动调用__destruct()方法，如果程序报错或者抛出异常，则就不会触发该魔术方法。但是在PHP中存在垃圾回收机制可以提前触发__destruct()函数 GC概念在PHP中，使用引用计数和回收周期来自动管理内存对象的，当一个变量被设置为NULL，或者没有任何指针指向时，它就会被变成垃圾，被GC机制自动回收掉，那么这里的话我们就可以理解为，当一个对象没有被引用时">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://backk0m.github.io/.io//Blog/source_posts/assets/image-20240206160553912.png">
-<meta property="og:image" content="http://backk0m.github.io/.io//Blog/source_posts/assets/image-20240206163502653.png">
+<meta property="og:image" content="http://backk0m.github.io/.io//Blog/source_posts/assets/image-20240206163502653-1707738862634-3.png">
 <meta property="article:published_time" content="2024-02-12T02:36:16.000Z">
-<meta property="article:modified_time" content="2024-02-12T03:16:40.553Z">
+<meta property="article:modified_time" content="2024-02-12T11:54:26.522Z">
 <meta property="article:author" content="Backk0m">
 <meta property="article:tag" content="php">
 <meta name="twitter:card" content="summary_large_image">
@@ -34,7 +34,7 @@
   
   
   
-  <title>GC垃圾回收机制 - Backk0m&#39;s Blog</title>
+  <title>PHP GC垃圾回收机制 - Backk0m&#39;s Blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -200,7 +200,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="GC垃圾回收机制"></span>
+            <span id="subtitle" data-typed-text="PHP GC垃圾回收机制"></span>
           
         </div>
 
@@ -271,7 +271,7 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">GC垃圾回收机制</h1>
+            <h1 id="seo-header">PHP GC垃圾回收机制</h1>
             
             
               <div class="markdown-body">
@@ -314,7 +314,7 @@
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-selector-tag">a</span>:<span class="hljs-number">2</span>:&#123;<span class="hljs-selector-tag">i</span>:<span class="hljs-number">0</span>;O:<span class="hljs-number">3</span>:<span class="hljs-string">&quot;cg0&quot;</span>:<span class="hljs-number">1</span>:&#123;s:<span class="hljs-number">3</span>:<span class="hljs-string">&quot;num&quot;</span>;O:<span class="hljs-number">3</span>:<span class="hljs-string">&quot;cg1&quot;</span>:<span class="hljs-number">1</span>:&#123;s:<span class="hljs-number">6</span>:<span class="hljs-string">&quot;string&quot;</span>;O:<span class="hljs-number">3</span>:<span class="hljs-string">&quot;cg2&quot;</span>:<span class="hljs-number">1</span>:&#123;s:<span class="hljs-number">3</span>:<span class="hljs-string">&quot;cmd&quot;</span>;s:<span class="hljs-number">10</span>:<span class="hljs-string">&quot;phpinfo();&quot;</span>;&#125;&#125;&#125;<span class="hljs-selector-tag">i</span>:<span class="hljs-number">0</span>;<span class="hljs-selector-tag">i</span>:<span class="hljs-number">0</span>;&#125;<br></code></pre></td></tr></table></figure>
 
 <p>要将第二个索引改为0</p>
-<p><img src="/.io//Blog\source_posts\assets\image-20240206163502653.png" srcset="/img/loading.gif" lazyload></p>
+<p><img src="/.io//Blog\source_posts\assets\image-20240206163502653-1707738862634-3.png" srcset="/img/loading.gif" lazyload></p>
 <p>参考文章：<a target="_blank" rel="noopener" href="https://xz.aliyun.com/t/11843">https://xz.aliyun.com/t/11843</a>   </p>
 <p>参考视频：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV16g411s7CH/?spm_id_from=333.999.0.0&vd_source=414113f33a1cd681c43e79462250b4d0">https://www.bilibili.com/video/BV16g411s7CH/</a></p>
 
@@ -341,8 +341,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>GC垃圾回收机制</div>
-      <div>http://backk0m.github.io/2024/02/12/GC垃圾回收机制/</div>
+      <div>PHP GC垃圾回收机制</div>
+      <div>http://backk0m.github.io/2024/02/12/PHP GC垃圾回收机制/</div>
     </div>
     <div class="license-meta">
       
